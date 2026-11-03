@@ -1,0 +1,29 @@
+# Container Apps Job definition. deploy.ps1 fills in the <PLACEHOLDERS>.
+location: <LOCATION>
+properties:
+  environmentId: <ENVIRONMENT_ID>
+  workloadProfileName: gpu-t4
+  configuration:
+    triggerType: Manual
+    replicaTimeout: 3600        # max seconds per run
+    replicaRetryLimit: 0
+    manualTriggerConfig:
+      parallelism: 1
+      replicaCompletionCount: 1
+  template:
+    containers:
+      - name: separator
+        image: <IMAGE>
+        resources:
+          cpu: 8
+          memory: 56Gi
+        env:
+          - name: MODEL
+            value: model_bs_roformer_ep_317_sdr_12.9755.ckpt
+        volumeMounts:
+          - volumeName: karaoke-data
+            mountPath: /data
+    volumes:
+      - name: karaoke-data
+        storageName: karaokefiles
+        storageType: AzureFile
