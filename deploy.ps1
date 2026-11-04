@@ -6,7 +6,7 @@
 $ErrorActionPreference = "Stop"
 
 # ---- edit these ----
-$GITHUB_USER = "CHANGE_ME"                         # your GitHub username, lowercase
+$GITHUB_USER = "ecreighton"                         # your GitHub username, lowercase
 $RG      = "karaoke-rg"
 $LOC     = "northcentralus"                        # T4 serverless GPUs are available here
 $STORAGE = "karaokesa$(Get-Random -Max 99999)"     # globally unique, lowercase

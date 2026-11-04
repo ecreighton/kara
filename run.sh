@@ -1,37 +1,56 @@
 #!/usr/bin/env bash
-# Processes every audio file in /data/in that hasn't been done yet.
+# Processes every audio file in /data/in.
 # Layout on the mounted Azure file share:
-#   /data/in/      <- you upload songs here
-#   /data/out/     <- instrumental + vocal stems land here (one folder per song)
+#   /data/in/      <- you upload songs here (optionally "<same name>.txt" with lyrics)
+#   /data/out/     <- per song: instrumental + vocal stems, lyrics, karaoke MP4
 #   /data/models/  <- model weights cached here so later runs skip the download
-set -euo pipefail
+#
+# Stage 1 (separation) runs once per song.
+# Stage 2 (lyrics + video) runs when there's no video yet, or when you upload a
+# newer .txt for the song -- that's how you fix wrong lyrics and re-render.
+set -uo pipefail
 
 IN=/data/in
 OUT=/data/out
 MODELS=/data/models
-# Strong default for vocals/instrumental. Run `audio-separator --list_models` to see others
-# (e.g. a MelBand "karaoke" model that removes only the lead vocal, keeping backing vocals).
+# Strong default for vocals/instrumental. Run `audio-separator --list_models` to see others.
 MODEL="${MODEL:-model_bs_roformer_ep_317_sdr_12.9755.ckpt}"
 
 mkdir -p "$IN" "$OUT" "$MODELS"
 shopt -s nullglob nocaseglob
 
-count=0
 for f in "$IN"/*.{flac,wav,mp3,m4a,ogg}; do
   name="$(basename "${f%.*}")"
   dest="$OUT/$name"
-  if [[ -d "$dest" ]]; then
-    echo "skip (already done): $name"
-    continue
+  txt="$IN/$name.txt"
+  mp4="$dest/$name (Karaoke).mp4"
+
+  # ---- stage 1: separation
+  vocals=( "$dest"/*"(Vocals)"*.flac )
+  if (( ${#vocals[@]} == 0 )); then
+    echo "== separating: $name"
+    mkdir -p "$dest"
+    if ! audio-separator "$f" \
+        --model_filename "$MODEL" \
+        --model_file_dir "$MODELS" \
+        --output_dir "$dest" \
+        --output_format FLAC; then
+      echo "!! separation failed: $name"; continue
+    fi
+    vocals=( "$dest"/*"(Vocals)"*.flac )
   fi
-  echo "separating: $name"
-  mkdir -p "$dest"
-  audio-separator "$f" \
-    --model_filename "$MODEL" \
-    --model_file_dir "$MODELS" \
-    --output_dir "$dest" \
-    --output_format FLAC
-  count=$((count + 1))
+  inst=( "$dest"/*"(Instrumental)"*.flac )
+  if (( ${#vocals[@]} == 0 || ${#inst[@]} == 0 )); then
+    echo "!! stems missing for $name"; continue
+  fi
+
+  # ---- stage 2: lyrics + karaoke video
+  if [[ -f "$mp4" && ! ( -f "$txt" && "$txt" -nt "$mp4" ) ]]; then
+    echo "== skip (video done): $name"; continue
+  fi
+  echo "== lyrics + video: $name"
+  python3 /app/lyrics.py --song "$f" --vocals "${vocals[0]}" --instrumental "${inst[0]}" \
+    --outdir "$dest" --lyrics-file "$txt" || echo "!! lyrics/video failed: $name"
 done
 
-echo "done: $count new song(s)"
+echo "== all done"

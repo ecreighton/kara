@@ -3,7 +3,7 @@ name: Build karaoke separator image
 on:
   push:
     branches: [main]
-    paths: [Dockerfile, run.sh, .github/workflows/build.yml]
+    paths: [Dockerfile, run.sh, lyrics.py, .github/workflows/build.yml]
   workflow_dispatch:
 
 permissions:

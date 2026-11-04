@@ -1,36 +1,47 @@
-# Everyday use:  .\karaoke.ps1 song1.flac song2.flac ...
-# Uploads the songs, runs the GPU job once, waits, then downloads the stems to .\stems
-param([Parameter(Mandatory, ValueFromRemainingArguments)][string[]]$Songs)
+# Everyday use:
+#   .\karaoke.ps1 song1.flac song2.mp3 ...   upload songs, process, download results to .\stems
+#   .\karaoke.ps1                            just process whatever is already uploaded + download
+#
+# Lyrics: if "song1.txt" sits next to "song1.flac", it's uploaded and used instead of the
+# automatic lookup. To fix a video's lyrics, edit the .txt and run the script again with the song.
+param([Parameter(ValueFromRemainingArguments)][string[]]$Songs = @())
 $ErrorActionPreference = "Stop"
 
 # ---- paste the values printed by deploy.ps1 ----
 $RG      = "karaoke-rg"
 $JOB     = "karaoke-sep"
-$STORAGE = "CHANGE_ME"
+$STORAGE = "karaokesa77458"
 $SHARE   = "karaoke"
 # ------------------------------------------------
 
 $KEY = az storage account keys list -g $RG -n $STORAGE --query "[0].value" -o tsv
 
-foreach ($f in $Songs) {
-  $name = Split-Path $f -Leaf
+function Upload($path) {
+  $name = Split-Path $path -Leaf
   Write-Host "uploading $name"
   az storage file upload --account-name $STORAGE --account-key $KEY `
-    -s $SHARE --source $f --path "in/$name" --only-show-errors
+    -s $SHARE --source $path --path "in/$name" --only-show-errors -o none
+}
+
+foreach ($f in $Songs) {
+  if (-not (Test-Path $f)) { Write-Warning "not found: $f"; continue }
+  Upload $f
+  $txt = [IO.Path]::ChangeExtension($f, ".txt")
+  if (Test-Path $txt) { Upload $txt }
 }
 
 $EXEC = az containerapp job start -g $RG -n $JOB --query name -o tsv
 Write-Host "job started: $EXEC"
 
 do {
-  Start-Sleep -Seconds 20
+  Start-Sleep -Seconds 30
   $STATUS = az containerapp job execution show -g $RG -n $JOB --job-execution-name $EXEC `
     --query properties.status -o tsv
-  Write-Host "status: $STATUS"
-} until ($STATUS -in "Succeeded", "Failed")
+  Write-Host "$(Get-Date -Format t)  status: $STATUS"
+} until ($STATUS -in "Succeeded", "Failed", "Stopped")
 
 New-Item -ItemType Directory -Force stems | Out-Null
 az storage file download-batch --account-name $STORAGE --account-key $KEY `
-  -s "$SHARE/out" -d stems --only-show-errors
-Write-Host "stems saved to .\stems"
-if ($STATUS -eq "Failed") { Write-Warning "Job failed - check logs in the Azure portal (Container Apps Job > Execution history)." }
+  -s "$SHARE/out" -d stems --only-show-errors -o none
+Write-Host "results saved to .\stems  (look for '<song> (Karaoke).mp4')"
+if ($STATUS -ne "Succeeded") { Write-Warning "Job $STATUS - check Console logs in the portal (karaoke-sep > Execution history)." }
