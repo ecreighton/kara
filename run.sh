@@ -45,12 +45,20 @@ for f in "$IN"/*.{flac,wav,mp3,m4a,ogg}; do
   fi
 
   # ---- stage 2: lyrics + karaoke video
-  if [[ -f "$mp4" && ! ( -f "$txt" && "$txt" -nt "$mp4" ) ]]; then
+  # Re-render when: no video yet, a newer .txt was uploaded, or the video settings changed.
+  settings="guide=${GUIDE_VOCAL:-0.15}"
+  marker="$dest/.render-settings"
+  if [[ -f "$mp4" && ! ( -f "$txt" && "$txt" -nt "$mp4" ) \
+        && "$(cat "$marker" 2>/dev/null)" == "$settings" ]]; then
     echo "== skip (video done): $name"; continue
   fi
-  echo "== lyrics + video: $name"
-  python3 /app/lyrics.py --song "$f" --vocals "${vocals[0]}" --instrumental "${inst[0]}" \
-    --outdir "$dest" --lyrics-file "$txt" || echo "!! lyrics/video failed: $name"
+  echo "== lyrics + video: $name ($settings)"
+  if python3 /app/lyrics.py --song "$f" --vocals "${vocals[0]}" --instrumental "${inst[0]}" \
+      --outdir "$dest" --lyrics-file "$txt"; then
+    echo "$settings" > "$marker"
+  else
+    echo "!! lyrics/video failed: $name"
+  fi
 done
 
 echo "== all done"

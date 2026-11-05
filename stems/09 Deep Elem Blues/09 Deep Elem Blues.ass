@@ -1,0 +1,39 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sing,DejaVu Sans,72,&H0000D7FF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+Style: Next,DejaVu Sans,56,&H00A0A0A0,&H00A0A0A0,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,5,80,80,0,1
+Style: Title,DejaVu Sans,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:06.00,Title,,0,0,0,,{\fad(400,400)}Grateful Dead - Deep Elem Blues
+Dialogue: 1,0:00:30.34,0:00:36.68,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf1}If {\kf16}you {\kf36}go {\kf44}down {\kf42}to {\kf30}deep {\kf42}elm {\kf68}put {\kf28}your {\kf34}money {\kf54}in {\kf28}your {\kf62}shoes
+Dialogue: 0,0:00:30.34,0:00:36.68,Next,,0,0,0,,{\pos(960,669)}The women in deep elem, they give you the deep elem blues
+Dialogue: 1,0:00:36.68,0:00:41.82,Sing,,0,0,0,,{\pos(960,486)}{\k28}{\kf50}The {\kf38}women {\kf68}in {\kf30}deep {\kf90}elem, {\kf8}they {\kf8}give {\kf52}you {\kf16}the {\kf20}deep {\kf50}elem {\kf56}blues
+Dialogue: 0,0:00:36.68,0:00:41.82,Next,,0,0,0,,{\pos(960,669)}Oh, sweet mama, your daddy's got them deep elem blues
+Dialogue: 1,0:00:41.82,0:01:03.72,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf182}Oh, {\kf34}sweet {\kf150}mama, {\kf10}your {\kf48}daddy's {\kf26}got {\kf34}them {\kf62}deep {\kf1626}elem {\kf18}blues
+Dialogue: 0,0:00:41.82,0:01:03.72,Next,,0,0,0,,{\pos(960,669)}Once I had a girlfriend, she meant the world to me
+Dialogue: 1,0:01:03.72,0:01:04.49,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}Once {\kf38}I {\kf14}had {\kf16}a {\kf4}girlfriend, {\kf1}she {\kf1}meant {\kf1}the {\kf1}world {\kf1}to {\kf5}me
+Dialogue: 0,0:01:03.72,0:01:04.49,Next,,0,0,0,,{\pos(960,669)}She went down to deep elem, now, she ain't what she used to be
+Dialogue: 1,0:01:04.49,0:01:04.49,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}She {\kf1}went {\kf1}down {\kf1}to {\kf1}deep {\kf1}elem, {\kf1}now, {\kf1}she {\kf1}ain't {\kf1}what {\kf1}she {\kf1}used {\kf1}to {\kf5}be
+Dialogue: 0,0:01:04.49,0:01:04.49,Next,,0,0,0,,{\pos(960,669)}Once I knew a preacher, preached the bible through and through
+Dialogue: 1,0:01:04.49,0:01:07.62,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}Once {\kf1}I {\kf1}knew {\kf24}a {\kf88}preacher, {\kf22}preached {\kf24}the {\kf24}bible {\kf72}through {\kf38}and {\kf26}through
+Dialogue: 0,0:01:04.49,0:01:07.62,Next,,0,0,0,,{\pos(960,669)}He went sown to deep elem, now, his preaching days are through
+Dialogue: 1,0:01:07.62,0:01:12.84,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf114}He {\kf10}went {\kf40}sown {\kf32}to {\kf38}deep {\kf64}elem, {\kf42}now, {\kf4}his {\kf46}preaching {\kf56}days {\kf40}are {\kf36}through
+Dialogue: 0,0:01:07.62,0:01:12.84,Next,,0,0,0,,{\pos(960,669)}When you go down to deep elem to have a little fun
+Dialogue: 1,0:01:12.84,0:01:15.53,Sing,,0,0,0,,{\pos(960,486)}{\k104}{\kf38}When {\kf60}you {\kf58}go {\kf4}down {\kf1}to {\kf1}deep {\kf1}elem {\kf1}to {\kf1}have {\kf1}a {\kf1}little {\kf5}fun
+Dialogue: 0,0:01:12.84,0:01:15.53,Next,,0,0,0,,{\pos(960,669)}Have your ten dollars ready when the police man comes
+Dialogue: 1,0:01:15.53,0:01:20.95,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}Have {\kf1}your {\kf10}ten {\kf1}dollars {\kf190}ready {\kf242}when {\kf1}the {\kf1}police {\kf1}man {\kf5}comes
+Dialogue: 0,0:01:15.53,0:01:20.95,Next,,0,0,0,,{\pos(960,669)}When yo go down to deep elem put your money in your pants
+Dialogue: 1,0:01:22.94,0:02:39.10,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf132}When {\kf72}yo {\kf52}go {\kf1}down {\kf18}to {\kf102}deep {\kf6612}elem {\kf36}put {\kf234}your {\kf54}money {\kf52}in {\kf24}your {\kf78}pants
+Dialogue: 0,0:01:22.94,0:02:39.10,Next,,0,0,0,,{\pos(960,669)}'Cause the women in deep elem, they don't give a man a chance
+Dialogue: 1,0:02:39.10,0:02:43.96,Sing,,0,0,0,,{\pos(960,486)}{\k66}{\kf22}'Cause {\kf72}the {\kf1}women {\kf20}in {\kf1}deep {\kf114}elem, {\kf1}they {\kf16}don't {\kf20}give {\kf84}a {\kf1}man {\kf14}a {\kf58}chance
+Dialogue: 0,0:02:39.10,0:02:43.96,Next,,0,0,0,,{\pos(960,669)}Oh, sweet mama, your daddy's got them deep elem blues
+Dialogue: 1,0:02:43.96,0:02:51.96,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf184}Oh, {\kf10}sweet {\kf142}mama, {\kf22}your {\kf24}daddy's {\kf22}got {\kf34}them {\kf60}deep {\kf76}elem {\kf26}blues

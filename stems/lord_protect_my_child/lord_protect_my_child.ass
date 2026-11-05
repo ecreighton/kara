@@ -1,0 +1,75 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sing,DejaVu Sans,72,&H0000D7FF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+Style: Next,DejaVu Sans,56,&H00A0A0A0,&H00A0A0A0,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,5,80,80,0,1
+Style: Title,DejaVu Sans,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:06.00,Title,,0,0,0,,{\fad(400,400)}Bob Dylan - Lord Protect My Child
+Dialogue: 1,0:00:09.10,0:00:12.90,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf14}For {\kf20}his {\kf46}age, {\kf10}he's {\kf40}wise
+Dialogue: 0,0:00:09.10,0:00:12.90,Next,,0,0,0,,{\pos(960,669)}He's got his mother's eyes
+Dialogue: 1,0:00:13.76,0:00:18.06,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf20}He's {\kf24}got {\kf18}his {\kf58}mother's {\kf60}eyes
+Dialogue: 0,0:00:13.76,0:00:18.06,Next,,0,0,0,,{\pos(960,669)}There's gladness in his heart
+Dialogue: 1,0:00:18.26,0:00:21.23,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf22}There's {\kf46}gladness {\kf18}in {\kf16}his {\kf45}heart
+Dialogue: 0,0:00:18.26,0:00:21.23,Next,,0,0,0,,{\pos(960,669)}He's young and he's wild
+Dialogue: 1,0:00:21.23,0:00:29.34,Sing,,0,0,0,,{\pos(960,486)}{\k79}{\kf18}He's {\kf24}young {\kf18}and {\kf646}he's {\kf26}wild
+Dialogue: 0,0:00:21.23,0:00:29.34,Next,,0,0,0,,{\pos(960,669)}My only prayer is, if I can't be there
+Dialogue: 1,0:00:29.34,0:00:39.76,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}My {\kf36}only {\kf80}prayer {\kf278}is, {\kf6}if {\kf16}I {\kf44}can't {\kf526}be {\kf56}there
+Dialogue: 0,0:00:29.34,0:00:39.76,Next,,0,0,0,,{\pos(960,669)}Lord, protect my child
+Dialogue: 1,0:00:39.76,0:00:46.60,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf66}Lord, {\kf1}protect {\kf598}my {\kf20}child
+Dialogue: 0,0:00:39.76,0:00:46.60,Next,,0,0,0,,{\pos(960,669)}As his youth now unfolds
+Dialogue: 1,0:00:46.60,0:00:49.34,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}As {\kf18}his {\kf36}youth {\kf38}now {\kf90}unfolds
+Dialogue: 0,0:00:46.60,0:00:49.34,Next,,0,0,0,,{\pos(960,669)}He is centuries old
+Dialogue: 1,0:00:49.34,0:00:57.26,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf18}He {\kf32}is {\kf576}centuries {\kf16}old
+Dialogue: 0,0:00:49.34,0:00:57.26,Next,,0,0,0,,{\pos(960,669)}See him at play makes me smile
+Dialogue: 1,0:00:57.26,0:01:04.30,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}See {\kf18}him {\kf18}at {\kf38}play {\kf60}makes {\kf558}me {\kf12}smile
+Dialogue: 0,0:00:57.26,0:01:04.30,Next,,0,0,0,,{\pos(960,669)}No matter what happens to me
+Dialogue: 1,0:01:04.30,0:01:06.72,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}No {\kf32}matter {\kf32}what {\kf50}happens {\kf24}to {\kf66}me
+Dialogue: 0,0:01:04.30,0:01:06.72,Next,,0,0,0,,{\pos(960,669)}No matter what my destiny
+Dialogue: 1,0:01:06.72,0:01:14.86,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf12}No {\kf28}matter {\kf30}what {\kf546}my {\kf48}destiny
+Dialogue: 0,0:01:06.72,0:01:14.86,Next,,0,0,0,,{\pos(960,669)}Lord, protect my child
+Dialogue: 1,0:01:14.86,0:01:21.72,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf72}Lord, {\kf8}protect {\kf590}my {\kf16}child
+Dialogue: 0,0:01:14.86,0:01:21.72,Next,,0,0,0,,{\pos(960,669)}Well, the whole world is asleep
+Dialogue: 1,0:01:21.72,0:01:24.32,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf18}Well, {\kf1}the {\kf26}whole {\kf36}world {\kf30}is {\kf50}asleep
+Dialogue: 0,0:01:21.72,0:01:24.32,Next,,0,0,0,,{\pos(960,669)}You can look at it and weep
+Dialogue: 1,0:01:24.42,0:01:28.53,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf10}You {\kf18}can {\kf24}look {\kf18}at {\kf14}it {\kf32}and {\kf45}weep
+Dialogue: 0,0:01:24.42,0:01:28.53,Next,,0,0,0,,{\pos(960,669)}Few things you find are worthwhile
+Dialogue: 1,0:01:29.34,0:01:39.08,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf18}Few {\kf34}things {\kf22}you {\kf46}find {\kf694}are {\kf10}worthwhile
+Dialogue: 0,0:01:29.34,0:01:39.08,Next,,0,0,0,,{\pos(960,669)}And though I don't ask for much
+Dialogue: 1,0:01:39.08,0:01:41.72,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}And {\kf26}though {\kf10}I {\kf40}don't {\kf28}ask {\kf12}for {\kf55}much
+Dialogue: 0,0:01:39.08,0:01:41.72,Next,,0,0,0,,{\pos(960,669)}No material things to touch
+Dialogue: 1,0:01:41.72,0:01:49.16,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf26}No {\kf30}material {\kf66}things {\kf386}to {\kf86}touch
+Dialogue: 0,0:01:41.72,0:01:49.16,Next,,0,0,0,,{\pos(960,669)}Lord, protect my child
+Dialogue: 1,0:01:49.16,0:01:56.92,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf158}Lord, {\kf1}protect {\kf608}my {\kf10}child
+Dialogue: 0,0:01:49.16,0:01:56.92,Next,,0,0,0,,{\pos(960,669)}He's young and on fire
+Dialogue: 1,0:01:56.92,0:01:58.28,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf14}He's {\kf32}young {\kf22}and {\kf20}on {\kf48}fire
+Dialogue: 0,0:01:56.92,0:01:58.28,Next,,0,0,0,,{\pos(960,669)}Full of hope and desire
+Dialogue: 1,0:01:58.28,0:02:02.66,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf286}Full {\kf24}of {\kf40}hope {\kf18}and {\kf70}desire
+Dialogue: 0,0:01:58.28,0:02:02.66,Next,,0,0,0,,{\pos(960,669)}In a world that's been raped, raped and defiled
+Dialogue: 1,0:02:02.66,0:02:14.12,Sing,,0,0,0,,{\pos(960,486)}{\k24}{\kf300}In {\kf16}a {\kf38}world {\kf44}that's {\kf16}been {\kf130}raped, {\kf32}raped {\kf526}and {\kf20}defiled
+Dialogue: 0,0:02:02.66,0:02:14.12,Next,,0,0,0,,{\pos(960,669)}If I fall along the way
+Dialogue: 1,0:02:14.12,0:02:16.48,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}If {\kf22}I {\kf28}fall {\kf48}along {\kf38}the {\kf70}way
+Dialogue: 0,0:02:14.12,0:02:16.48,Next,,0,0,0,,{\pos(960,669)}And can't see another day
+Dialogue: 1,0:02:16.48,0:02:21.64,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf16}And {\kf44}can't {\kf24}see {\kf72}another {\kf110}day
+Dialogue: 0,0:02:16.48,0:02:21.64,Next,,0,0,0,,{\pos(960,669)}Lord, protect my child
+Dialogue: 1,0:02:22.03,0:03:05.90,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf135}Lord, {\kf42}protect {\kf4042}my {\kf18}child
+Dialogue: 0,0:02:22.03,0:03:05.90,Next,,0,0,0,,{\pos(960,669)}There'll be a time I hear tell
+Dialogue: 1,0:03:05.90,0:03:08.82,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf14}There'll {\kf14}be {\kf12}a {\kf52}time {\kf26}I {\kf24}hear {\kf60}tell
+Dialogue: 0,0:03:05.90,0:03:08.82,Next,,0,0,0,,{\pos(960,669)}When all will be well
+Dialogue: 1,0:03:08.82,0:03:13.08,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf12}When {\kf40}all {\kf38}will {\kf22}be {\kf64}well
+Dialogue: 0,0:03:08.82,0:03:13.08,Next,,0,0,0,,{\pos(960,669)}When God and man will be reconciled
+Dialogue: 1,0:03:13.16,0:03:23.16,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf30}When {\kf54}God {\kf20}and {\kf44}man {\kf36}will {\kf644}be {\kf22}reconciled
+Dialogue: 0,0:03:13.16,0:03:23.16,Next,,0,0,0,,{\pos(960,669)}But until men lose their chains
+Dialogue: 1,0:03:23.16,0:03:25.76,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf1}But {\kf44}until {\kf32}men {\kf40}lose {\kf30}their {\kf74}chains
+Dialogue: 0,0:03:23.16,0:03:25.76,Next,,0,0,0,,{\pos(960,669)}And righteousness reigns
+Dialogue: 1,0:03:25.76,0:03:30.66,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf26}And {\kf94}righteousness {\kf220}reigns
+Dialogue: 0,0:03:25.76,0:03:30.66,Next,,0,0,0,,{\pos(960,669)}Lord, protect my child
+Dialogue: 1,0:03:30.66,0:03:36.93,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf272}Lord, {\kf42}protect {\kf48}my {\kf65}child

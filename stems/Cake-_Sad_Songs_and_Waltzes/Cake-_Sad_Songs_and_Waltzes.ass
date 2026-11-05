@@ -1,0 +1,55 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sing,DejaVu Sans,72,&H0000D7FF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+Style: Next,DejaVu Sans,56,&H00A0A0A0,&H00A0A0A0,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,5,80,80,0,1
+Style: Title,DejaVu Sans,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,4,2,5,80,80,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:06.00,Title,,0,0,0,,{\fad(400,400)}Cake - Sad Songs and Waltzes
+Dialogue: 1,0:00:06.54,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf1}I'm {\kf1}writing {\kf1}a {\kf1}song {\kf1}all {\kf1}about {\kf5}you
+Dialogue: 0,0:00:06.54,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}A true song as real as my tears
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}A {\kf1}true {\kf1}song {\kf1}as {\kf1}real {\kf1}as {\kf1}my {\kf5}tears
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}But you've no need to fear it
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}But {\kf1}you've {\kf1}no {\kf1}need {\kf1}to {\kf1}fear {\kf5}it
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}'Cause no one will hear it
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}'Cause {\kf1}no {\kf1}one {\kf1}will {\kf1}hear {\kf5}it
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}Sad songs and waltzes aren't selling this year
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}Sad {\kf1}songs {\kf1}and {\kf1}waltzes {\kf1}aren't {\kf1}selling {\kf1}this {\kf5}year
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}I'll tell all about how you cheated
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}I'll {\kf1}tell {\kf1}all {\kf1}about {\kf1}how {\kf1}you {\kf5}cheated
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}I'd like for the whole world to hear
+Dialogue: 1,0:00:08.09,0:00:08.09,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}I'd {\kf1}like {\kf1}for {\kf1}the {\kf1}whole {\kf1}world {\kf1}to {\kf5}hear
+Dialogue: 0,0:00:08.09,0:00:08.09,Next,,0,0,0,,{\pos(960,669)}I'd like to get even
+Dialogue: 1,0:00:08.09,0:00:40.03,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf2894}I'd {\kf300}like {\kf1}to {\kf1}get {\kf5}even
+Dialogue: 0,0:00:08.09,0:00:40.03,Next,,0,0,0,,{\pos(960,669)}With you 'cause you're leavin'
+Dialogue: 1,0:00:40.03,0:00:40.03,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}With {\kf1}you {\kf1}'cause {\kf1}you're {\kf5}leavin'
+Dialogue: 0,0:00:40.03,0:00:40.03,Next,,0,0,0,,{\pos(960,669)}But sad songs and waltzes aren't selling this year
+Dialogue: 1,0:00:40.03,0:00:41.17,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}But {\kf114}sad {\kf1}songs {\kf1}and {\kf1}waltzes {\kf1}aren't {\kf1}selling {\kf1}this {\kf5}year
+Dialogue: 0,0:00:40.03,0:00:41.17,Next,,0,0,0,,{\pos(960,669)}It's a good thing that I'm not a star
+Dialogue: 1,0:00:41.17,0:00:41.17,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}It's {\kf1}a {\kf1}good {\kf1}thing {\kf1}that {\kf1}I'm {\kf1}not {\kf1}a {\kf5}star
+Dialogue: 0,0:00:41.17,0:00:41.17,Next,,0,0,0,,{\pos(960,669)}You don't know how lucky you are
+Dialogue: 1,0:00:41.17,0:00:41.17,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}You {\kf1}don't {\kf1}know {\kf1}how {\kf1}lucky {\kf1}you {\kf5}are
+Dialogue: 0,0:00:41.17,0:00:41.17,Next,,0,0,0,,{\pos(960,669)}Though my record may say it
+Dialogue: 1,0:00:41.17,0:00:41.17,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}Though {\kf1}my {\kf1}record {\kf1}may {\kf1}say {\kf5}it
+Dialogue: 0,0:00:41.17,0:00:41.17,Next,,0,0,0,,{\pos(960,669)}No one will play it
+Dialogue: 1,0:00:41.17,0:00:46.22,Sing,,0,0,0,,{\pos(960,486)}{\k-5}{\kf1}No {\kf38}one {\kf376}will {\kf64}play {\kf32}it
+Dialogue: 0,0:00:41.17,0:00:46.22,Next,,0,0,0,,{\pos(960,669)}Sad songs and waltzes aren't selling this year (alright)
+Dialogue: 1,0:00:46.22,0:01:21.32,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf98}Sad {\kf110}songs {\kf32}and {\kf102}waltzes {\kf90}aren't {\kf34}selling {\kf2810}this {\kf164}year {\kf46}(alright)
+Dialogue: 0,0:00:46.22,0:01:21.32,Next,,0,0,0,,{\pos(960,669)}It's a good thing that I'm not a star
+Dialogue: 1,0:01:21.32,0:01:27.22,Sing,,0,0,0,,{\pos(960,486)}{\k150}{\kf26}It's {\kf18}a {\kf22}good {\kf78}thing {\kf80}that {\kf42}I'm {\kf58}not {\kf66}a {\kf50}star
+Dialogue: 0,0:01:21.32,0:01:27.22,Next,,0,0,0,,{\pos(960,669)}You don't know how lucky you are
+Dialogue: 1,0:01:27.22,0:01:34.66,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf264}You {\kf44}don't {\kf44}know {\kf80}how {\kf72}lucky {\kf88}you {\kf152}are
+Dialogue: 0,0:01:27.22,0:01:34.66,Next,,0,0,0,,{\pos(960,669)}Though my record may say it
+Dialogue: 1,0:01:34.66,0:01:38.66,Sing,,0,0,0,,{\pos(960,486)}{\k0}{\kf84}Though {\kf36}my {\kf86}record {\kf74}may {\kf64}say {\kf56}it
+Dialogue: 0,0:01:34.66,0:01:38.66,Next,,0,0,0,,{\pos(960,669)}No one will play it
+Dialogue: 1,0:01:38.66,0:01:42.16,Sing,,0,0,0,,{\pos(960,486)}{\k78}{\kf28}No {\kf64}one {\kf68}will {\kf42}play {\kf70}it
+Dialogue: 0,0:01:38.66,0:01:42.16,Next,,0,0,0,,{\pos(960,669)}Sad songs and waltzes aren't selling this year (alright)
+Dialogue: 1,0:01:42.16,0:01:50.94,Sing,,0,0,0,,{\pos(960,486)}{\k52}{\kf34}Sad {\kf80}songs {\kf58}and {\kf94}waltzes {\kf90}aren't {\kf56}selling {\kf96}this {\kf102}year {\kf16}(alright)

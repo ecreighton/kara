@@ -200,14 +200,29 @@ def build_lrc(lines):
     return "\n".join(ts_lrc(ws[0][1]) + " ".join(w for w, _, _ in ws) for ws in lines if ws) + "\n"
 
 
-def render(instrumental, ass_path, out_mp4):
+def render(instrumental, vocals, ass_path, out_mp4, guide):
+    """guide = guide-vocal volume (0 = none, 0.15 = quiet, 1 = original level).
+    With a guide vocal, the MP4 gets two audio tracks: the guide mix (default)
+    and the pure instrumental, switchable in players like VLC."""
+    vf = f"[0:v]ass={ass_path}[vout]"
+    dur = probe(instrumental)[2]   # give the background an exact length (filter graphs ignore -shortest)
     cmd = ["ffmpeg", "-y", "-v", "error", "-stats",
-           "-f", "lavfi", "-i", f"color=c=0x12121c:s={W}x{H}:r=30",
-           "-i", instrumental,
-           "-vf", f"ass={ass_path}",
-           "-map", "0:v", "-map", "1:a", "-shortest",
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", out_mp4]
+           "-f", "lavfi", "-i", f"color=c=0x12121c:s={W}x{H}:r=30:d={dur:.3f}",
+           "-i", instrumental]
+    if guide > 0:
+        cmd += ["-i", vocals,
+                "-filter_complex",
+                f"{vf};[2:a]volume={guide}[gv];[1:a][gv]amix=inputs=2:duration=first:normalize=0[mix]",
+                "-map", "[vout]", "-map", "[mix]", "-map", "1:a",
+                # MP4 players show track names from handler_name
+                "-metadata:s:a:0", f"handler_name=With guide vocal ({int(guide * 100)}%)",
+                "-metadata:s:a:1", "handler_name=Instrumental only",
+                "-disposition:a:0", "default", "-disposition:a:1", "0"]
+    else:
+        cmd += ["-filter_complex", vf, "-map", "[vout]", "-map", "1:a"]
+    cmd += ["-shortest",
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", out_mp4]
     subprocess.run(cmd, check=True)
 
 
@@ -259,8 +274,9 @@ def main():
     with open(ass_path, "w", encoding="utf-8") as f:
         f.write(build_ass(timed, title_text))
 
-    print("  rendering video")
-    render(a.instrumental, ass_path, base + " (Karaoke).mp4")
+    guide = max(0.0, min(1.0, float(os.environ.get("GUIDE_VOCAL", "0.15"))))
+    print(f"  rendering video (guide vocal {int(guide * 100)}%)")
+    render(a.instrumental, a.vocals, ass_path, base + " (Karaoke).mp4", guide)
     print(f"  done: {name} (Karaoke).mp4  [lyrics: {source or 'transcribed'}]")
 
 

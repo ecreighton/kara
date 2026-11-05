@@ -5,11 +5,15 @@
 # Lyrics: if "song1.txt" sits next to "song1.flac", it's uploaded and used instead of the
 # automatic lookup. To fix a video's lyrics, edit the .txt and run the script again with the song.
 #   .\karaoke.ps1 -Watch <execution-name>    follow a run that's already going, then download
+[CmdletBinding(PositionalBinding = $false)]   # bare arguments are always songs
 param(
   [string]$Watch,
   [Parameter(ValueFromRemainingArguments)][string[]]$Songs = @()
 )
 $ErrorActionPreference = "Stop"
+
+# Safety net: a file path given where a run name was expected is a song, not a run to watch
+if ($Watch -and (Test-Path $Watch)) { $Songs = @($Watch) + $Songs; $Watch = $null }
 
 # ---- paste the values printed by deploy.ps1 ----
 $RG      = "karaoke-rg"
