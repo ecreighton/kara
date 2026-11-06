@@ -86,8 +86,23 @@ def clean_lines(text):
 
 
 # ---------------------------------------------------------------- alignment
+def disable_whisper_triton():
+    """Whisper's optional GPU (Triton) kernels for word timing break with newer
+    PyTorch/Triton versions. Make them report "unavailable" so Whisper uses its
+    built-in fallback instead (still runs on the GPU, just a different code path)."""
+    def unavailable(*args, **kwargs):
+        raise RuntimeError("triton kernels disabled")
+    try:
+        import whisper.triton_ops, whisper.timing
+        whisper.triton_ops.median_filter_cuda = unavailable
+        whisper.timing.dtw_cuda = unavailable
+    except Exception as e:
+        print(f"  (could not patch whisper triton ops: {e})")
+
+
 def load_whisper():
     import torch, stable_whisper
+    disable_whisper_triton()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     name = os.environ.get("WHISPER_MODEL", "small")
     print(f"  whisper model '{name}' on {device}")

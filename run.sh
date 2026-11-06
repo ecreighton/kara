@@ -30,13 +30,17 @@ for f in "$IN"/*.{flac,wav,mp3,m4a,ogg}; do
   if (( ${#vocals[@]} == 0 )); then
     echo "== separating: $name"
     mkdir -p "$dest"
+    # Write stems to local disk first, then copy to the share: the Azure file share
+    # doesn't allow the permission changes the separator makes while saving.
+    work="$(mktemp -d)"
     if ! audio-separator "$f" \
         --model_filename "$MODEL" \
         --model_file_dir "$MODELS" \
-        --output_dir "$dest" \
+        --output_dir "$work" \
         --output_format FLAC; then
-      echo "!! separation failed: $name"; continue
+      echo "!! separation failed: $name"; rm -rf "$work"; continue
     fi
+    cp "$work"/* "$dest"/ && rm -rf "$work"
     vocals=( "$dest"/*"(Vocals)"*.flac )
   fi
   inst=( "$dest"/*"(Instrumental)"*.flac )

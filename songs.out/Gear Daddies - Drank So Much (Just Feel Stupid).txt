@@ -1,0 +1,30 @@
+version: '1.0'
+metadata:
+  title: Drank So Much (Just Feel Stupid)
+  artist: Gear Daddies
+  album: Let's Go Scare Al
+  duration_ms: 220000
+  instrumental: false
+lines: []
+plain: |-
+  Sometimes I swear, I need a drink.
+  And sometimes I swear to god, I just don't stop to think.
+  And I know tomorrow I'll regret all these things I did.
+  I drank so much tonight I just feel stupid.
+
+  I didn't go where I planned to get this drunk.
+  And I guess my plan to get up and look for work is sunk.
+  And I know tomorrow I'll regret all these things I did.
+  I drank so much tonight I just feel stupid... Randy!
+
+  And god only knows why I do these things.
+  And god won't you tell me why it always ends the same.
+  And still,
+
+  Sometimes I swear, I need a drink.
+  And sometimes I swear to god, I just don't stop to think.
+  And I know tomorrow I'll regret all these things I did.
+  I drank so much tonight I just feel stupid.
+  I drank so much tonight I just feel stupid.
+
+
